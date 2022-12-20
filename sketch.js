@@ -1,60 +1,78 @@
-//2번째-바 색상 변하기
 var wave;
 var playing = false;
 var button;
 var slider;
-let r,g,b;
+let r;
 function setup() {
   createCanvas(720, 500); //컨버스 크기
   wave=new p5.Oscillator();
   wave.setType('sine');
   wave.freq(261);
   wave.amp(0);
-  rect(0,0,100,400);
-  rect(100,0,100,400);
-  rect(200,0,100,400);
-  rect(300,0,100,400);
-  rect(400,0,100,400);
+  rect(0,0,120,400);
+  fill(255);
+  rect(120,0,120,400);
+  fill(255);
+  rect(240,0,120,400);
+  fill(255);
+  rect(360,0,120,400);
+  fill(255);
+  rect(480,0,120,400);
+  fill(255);
+  r=random(0.1,10);
 
-  rect(0,450,600,50);
-  //g=119;
-  //b=173;
-
-  g=random(0,200);
-  b=random(50,255);
   
-  volume = createSlider(0,1, wave.amp,0.01)
-  volume.size(300);
+  // button=createButton('play/pause');
   
 }
 
 function draw(){
-  //r=random(50,255);
-  // fill(r,g,b);
-  // rect(0,450,600,50); 여기!!!주석 풀기
+  rect(0,400,720,50);
+  fill(r,g,b);
+  
+//  if(playing){
+    
+//  } else{
 
-  //console.log(r,g,b);
+//  }
 
   for(var i=0;i<touches.length;i++){
     textt();
   }
-
 }
 function toggle(){
-  
+//   if(!playing){
+    
+//   }else{
+    
+//   }
 }
 
 function touchStarted(){
   // background(255);
   wave.start();
-  wave.amp(volume.value());
+  if(-90<=accelerationY<0)
+    {
+      wave.amp(0.1);
+      console.log("0.1");
+    }
+  if(0<=accelerationY<90)
+    {
+      wave.amp(5);
+      console.log("5");
+    }
+  if(90<=accelerationY<180)
+    {
+      wave.amp(10);
+      console.log("10");
+    }
+  //wave.amp(r);
   playing=true;
-
+  //console.log(r);
   if((touches.x,0,120)&&(touches.y,0,400))
     {
-    rect(0,0,100,400);
-    fill(255)
-  
+    rect(0,0,120,400);
+    fill(255);
     console.log("here");
     }
 }
@@ -64,7 +82,7 @@ function touchEnded(){
   playing=false;
     if((touches.x,0,120)&&(touches.y,0,400))
     {
-    rect(0,0,100,400);
+    rect(0,0,120,400);
     fill(87);
     }
   
@@ -79,5 +97,5 @@ function textt(){
 }
 
 function deviceMoved(){
-  r=map(accelerationX, -90,90,100,175);
+  //r=map(accelerationX, -90,90,100,175);
 }

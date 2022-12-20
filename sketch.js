@@ -31,7 +31,7 @@ function setup() {
 function draw(){
   r=random(50,255);
    fill(r,g,b);
-   rect(0,450,600,50); 여기!!!주석 풀기
+   rect(0,450,600,50);
 
   //console.log(r,g,b);
 

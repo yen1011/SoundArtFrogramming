@@ -3,7 +3,6 @@ var wave;
 var wave2;
 var wave3;
 var wave4;
-let c,c_,d,d_,e,f,f_,g,g_,a
 var playing = false;
 var button;
 var slider;
@@ -80,7 +79,6 @@ function setup() {
   rect(0,500,600,50);
   //g=119;
   //b=173;
-  c,c_,d,d_,e,f,f_,g,g_,a=0;
   g=random(0,200);
   b=random(50,255);
   
@@ -93,6 +91,7 @@ function draw(){
   fill(255);
   rect(0,0,100,400);
 
+  //기울기에 따라 색상  사각형
   r=random(50,255);
    fill(r,g,b);
   rect(0,500,600,50);
@@ -120,7 +119,6 @@ function touchStarted(){
     playing=true;
     //rect(0,0,100,400);
     //fill(87)
-      c=1;
     console.log("here");
     }
   
@@ -132,7 +130,6 @@ function touchStarted(){
     playing=true;
     //rect(100,0,100,400);
     //fill(87)
-      d=1;
     }
   
     if((touches[0].x>200 && touches[0].x<300 && touches[0].y>0 && touches[0].y<400))
@@ -142,7 +139,6 @@ function touchStarted(){
     playing=true;
     //rect(200,0,100,400);
     //fill(87)
-      e=1
     }
   
     if((touches[0].x>300 && touches[0].x<400 && touches[0].y>0 && touches[0].y<400))
@@ -152,7 +148,6 @@ function touchStarted(){
     playing=true;
     //rect(300,0,100,400);
     //fill(87)
-      f=1
     }
   
     if((touches[0].x>400 && touches[0].x<500 && touches[0].y>0 && touches[0].y<400))
@@ -162,7 +157,6 @@ function touchStarted(){
     playing=true;
     //rect(400,0,100,400);
     //fill(87)
-      g=1
     }
   
     if((touches[0].x>500 && touches[0].x<600 && touches[0].y>0 && touches[0].y<400))
@@ -172,7 +166,6 @@ function touchStarted(){
     playing=true;
     //rect(400,0,100,400);
     //fill(87)
-      a=1
     }
 //----------------------------------------
   
@@ -183,7 +176,6 @@ function touchStarted(){
     playing=true;
     //rect(400,0,100,400);
     //fill(87)
-      c_=1;
     }
   
       if((touches[0].x>165 && touches[0].x<235 && touches[0].y>400 && touches[0].y<500))
@@ -193,7 +185,6 @@ function touchStarted(){
     playing=true;
     //rect(400,0,100,400);
     //fill(87)
-      d_=1;
     }
   
       if((touches[0].x>365 && touches[0].x<435 && touches[0].y>400 && touches[0].y<500))
@@ -203,7 +194,6 @@ function touchStarted(){
     playing=true;
     //rect(400,0,100,400);
     //fill(87)
-      f_=1;
     }
   
       if((touches[0].x>465 && touches[0].x<535 && touches[0].y>400 && touches[0].y<500))
@@ -213,37 +203,399 @@ function touchStarted(){
     playing=true;
     //rect(400,0,100,400);
     //fill(87)
-      g_=1;
     }
-  //--------------------------------------------
-  if(c==1&&d==1)
+  //------------------두개 멀티터치
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400))
     {
-    wave1_.start();
-    wave1_.amp(volume.value());
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>200 && touches[1].x<300 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>300 && touches[1].x<400 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>400 && touches[1].x<500 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>500 && touches[1].x<600 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave6.start();
+    wave6.amp(volume.value());
     playing=true;
     }
   
-  if(d==1&&e==1)
+  
+    if((touches[0].x>100 && touches[0].x<200 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>200 && touches[1].x<300 && touches[1].y>0 && touches[1].y<400))
     {
-    wave2_.start();
-    wave2_.amp(volume.value());
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>100 && touches[0].x<200 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>300 && touches[1].x<400 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>100 && touches[0].x<200 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>400 && touches[1].x<500 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>100 && touches[0].x<200 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>500 && touches[1].x<600 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave6.start();
+    wave6.amp(volume.value());
     playing=true;
     }
   
-  if(f==1&&g==1)
+  
+    if((touches[0].x>200 && touches[0].x<300 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>300 && touches[1].x<400 && touches[1].y>0 && touches[1].y<400))
     {
-    wave3_.start();
-    wave3_.amp(volume.value());
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
     playing=true;
     }
-    
-  if(g==1&&a==1)
+    if((touches[0].x>200 && touches[0].x<300 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>400 && touches[1].x<500 && touches[1].y>0 && touches[1].y<400))
     {
-    wave4_.start();
-    wave4_.amp(volume.value());
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>200 && touches[0].x<300 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>500 && touches[1].x<600 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    wave6.start();
+    wave6.amp(volume.value());
     playing=true;
     }
   
+    if((touches[0].x>300 && touches[0].x<400 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>400 && touches[1].x<500 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>300 && touches[0].x<400 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>500 && touches[1].x<600 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    }
+  
+  
+    if((touches[0].x>400 && touches[0].x<500 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>500 && touches[1].x<600 && touches[1].y>0 && touches[1].y<400))
+    {
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    }
+  
+  //---------------------------세개 멀티터치
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>300 && touches[2].x<400 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>400 && touches[2].x<500 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>500 && touches[2].x<600 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    }
+  
+  
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&& (touches[1].x>300 && touches[1].x<400 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&& (touches[1].x>400 && touches[1].x<500 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&& (touches[1].x>500 && touches[1].x<600 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+  
+  
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&& (touches[1].x>300 && touches[1].x<400 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>400 && touches[2].x<500 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&& (touches[1].x>300 && touches[1].x<400 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>500 && touches[2].x<600 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>0 && touches[0].x<100 && touches[0].y>0 && touches[0].y<400)&& (touches[1].x>400 && touches[1].x<500 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>500 && touches[2].x<600 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave.start();
+    wave.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    }
+  
+  if((touches[0].x>300 && touches[0].x<400 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>400 && touches[0].x<500 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>500 && touches[0].x<600 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>400 && touches[0].x<500 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>300 && touches[2].x<400 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>500 && touches[0].x<600 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>300 && touches[2].x<400 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>500 && touches[0].x<600 && touches[0].y>0 && touches[0].y<400)&&(touches[1].x>100 && touches[1].x<200 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>400 && touches[2].x<500 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    wave2.start();
+    wave2.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    }
+  
+  
+    if((touches[0].x>400 && touches[0].x<500 && touches[0].y>0 && touches[0].y<400)&& (touches[1].x>300 && touches[1].x<400 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>500 && touches[0].x<600 && touches[0].y>0 && touches[0].y<400)&& (touches[1].x>300 && touches[1].x<400 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>500 && touches[0].x<600 && touches[0].y>0 && touches[0].y<400)&& (touches[1].x>400 && touches[1].x<500 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave6.start();
+    wave6.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
+    if((touches[0].x>300 && touches[0].x<400 && touches[0].y>0 && touches[0].y<400)&& (touches[1].x>400 && touches[1].x<500 && touches[1].y>0 && touches[1].y<400) && (touches[2].x>200 && touches[2].x<300 && touches[2].y>0 && touches[2].y<400))
+    {
+    wave4.start();
+    wave4.amp(volume.value());
+    playing=true;
+    wave5.start();
+    wave5.amp(volume.value());
+    playing=true;
+    wave3.start();
+    wave3.amp(volume.value());
+    playing=true;
+    }
 }
 
 function touchEnded(){
@@ -270,6 +622,8 @@ function textt(){
   text(touches[0].y, 200, 240);
   text(touches[1].x, 200, 260);
   text(touches[1].y, 200, 280);
+  text(touches[2].x, 200, 300);
+  text(touches[2].y, 200, 320);
 }
 
 function deviceMoved(){
